@@ -1,0 +1,2 @@
+It contains all the Generics related code that 007 learnt from Java-Documentaion.
+url:https://docs.oracle.com/javase/tutorial/java/generics/index.html
