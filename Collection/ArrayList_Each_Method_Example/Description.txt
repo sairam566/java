@@ -1,0 +1,1 @@
+This ArrayList_Each_Method_Example contains examples of popular method in ArrayList.
