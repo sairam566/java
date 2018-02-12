@@ -24,10 +24,6 @@ public class ArrayList_ensureCapacity_Demo {
 
 /*
  * Final OutPut
- * -----------------------------------------
- * Is element 40 present:true
- * 
- * Is element 11 present:false
- * -----------------------------------------
+ * 10 20 30 40 50
  * 
  * */
