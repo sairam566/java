@@ -2,6 +2,84 @@ package com.ts.arundaytwo;
 
 public class Number {
 	
+	
+	public static boolean isPrime(int n)
+	{
+		return n!=0 && factorsOfNumbers(n)==2;
+	}
+	
+	
+	public static int circulate(int n)
+	{
+		String no=String.valueOf(n);
+		no=no.substring(1)+no.charAt(0);
+		return Integer.parseInt(no);
+	}
+	public static boolean isCircularPrime(int n)
+	{
+		int count=0;
+		int noOfDigits=countDigits(n);
+		if(isPrime(n))
+		{
+			
+//			StringBuilder number=new StringBuilder(new String().valueOf(n));
+//			for(int i=0;i<noOfDigits;i++)
+//			{
+//				char digit=number.charAt(0);
+//				number.deleteCharAt(0);
+//				number.append(digit);
+//				if(isPrime(Integer.parseInt(number.toString())))
+//				{
+//					count++;
+//				}
+//			}
+			
+			for(int i=0;i<noOfDigits;i++)
+			{
+				
+			}
+			
+			
+		}
+		 return (count==noOfDigits);
+	}
+	
+	
+	public static String strongNoBetween(int lowerLimit,int upperLimit)
+	{
+		String result="";
+		for(;lowerLimit<=upperLimit;lowerLimit++)
+		{
+			if(isStrong(lowerLimit))
+			result+=lowerLimit+" ";
+		}
+		return result;
+	}
+	
+	public static String armstrongNoBetween(int lowerLimit,int upperlimit)
+	{
+		String result="";
+		for(;lowerLimit<=upperlimit;lowerLimit++)
+		{
+			if(isArmstrong(lowerLimit))
+				result+=lowerLimit+" ";
+		}
+		return result;
+	}
+	private static int factorsOfNumbers(int n) {
+		int factors=0;
+		for(int i=1;i<=n;i++)
+		{
+			if(n%i==0)
+			{
+				factors++;
+			}
+			
+		}
+		return factors;
+	}
+
+
 	public static int countDigits(int n){
 		int count=0;
 		while(n!=0)
@@ -42,7 +120,15 @@ public class Number {
 	}
 	
 	public static int sumPowerOfDigits(int n){
-		return n;
+		int power=countDigits(n);
+		int sum=0;
+		while(n!=0)
+		{
+			int rem=n%10;
+			sum+=power(rem, power);
+			n/=10;
+		}
+		return sum;
 		
 	}
 	
@@ -67,7 +153,9 @@ public class Number {
 	
 	
 	public static void main(String[] args) {
-		System.out.println(power(4,3));
+		// System.out.println(armstrongNoBetween(1, 400));  //1 2 3 4 5 6 7 8 9 153 370 371 
+		System.out.println(strongNoBetween(1,200));
+		//System.out.println(isArmstrong(372));
 	}
 
 }
