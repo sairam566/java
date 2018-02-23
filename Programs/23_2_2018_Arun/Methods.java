@@ -28,6 +28,58 @@ public class Methods {
 		return count;
 	}
 	
+	public static int sumOfElements(int arr)
+	{
+		int sum=0;
+		for(int i=0;i<are.length;i++)
+		{
+       			sum+=arr[i];
+		}
+		return sum;
+	}	
+	
+	public static boolean isPrime(int n)
+	{
+		return n!=0 && factorsOfNumber(n)==2;
+	}
+
+	
+	public static int factorsOfNumber(int n)
+	{
+		int count=0;
+   		for(int i=1;i<=n;i++)
+		{
+   			if(n%i==0)
+			{
+			count++;
+			}
+		}
+		return count;
+	}
+	vjinka@amazon.com
+	public static boolean isStrong(int n)
+	{
+		
+	}
+	
+	public static int sumOfFactors(int n)
+	{
+		int sum=0;
+   		for(int i=1;i<=n;i++)
+		{
+   			if(n%i==0)
+			{
+				sum+=i;
+			}
+		}
+		return sum;
+	}
+	public static boolean isPerfect(int n)
+	{
+	 	return n==sumOfFactors(n);
+	}
+
+	
 	public static int largestElement(int[] arr)
 	{
 		int largest=arr[0];
