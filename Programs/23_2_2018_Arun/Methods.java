@@ -1,6 +1,57 @@
 package com.ts.adaythree;
 public class Methods {
 
+	
+	
+	public static int digitCount(int n)
+	{
+		int count=0;
+		while(n!=0)
+		{
+			count++;
+			n/=10;
+		}
+		return count;
+	}
+	
+	public static int powerOf(int base,int power)
+	{
+		int result=1;
+		for(int i=0;i<power;i++)
+		{
+			result*=base;
+		}
+		return result;
+	}
+	public static int armstrongCheck(int n)
+	{
+		int power=digitCount(n);
+		int result=0;
+		while(n!=0)
+		{
+			result+=powerOf(n%10, power);
+			n/=10;
+		}
+		return result;
+	}
+	public static boolean isArmstrong(int n)
+	{
+		return n==armstrongCheck(n);
+	}
+	
+	public static String listOfArmstrong(int[] arr)
+	{
+		String result="";
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isArmstrong(arr[i]))
+			{
+				result+=arr[i]+" ";
+			}
+		}
+		return result;
+	}
+	
 	public static void displayArray(int[] arr) {
 		for (int i : arr) {
 			System.out.print(i + " ");
@@ -86,7 +137,7 @@ public class Methods {
 	public static int sumOfFactors(int n)
 	{
 		int sum=0;
-   		for(int i=1;i<=n;i++)
+   		for(int i=1;i<n;i++)
 		{
    			if(n%i==0)
 			{
@@ -106,6 +157,32 @@ public class Methods {
 		for(int i=0;i<arr.length;i++)
 		{
 			if(isStrong(arr[i]))
+			{
+				result+=arr[i]+" ";
+			}
+		}
+		return result;
+	}
+	
+	public static String listOfPrimeNo(int[] arr)
+	{
+		String result="";
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isPrime(arr[i]))
+			{
+				result+=arr[i]+" ";
+			}
+		}
+		return result;
+	}
+	
+	public static String listOfPerfectNo(int[] arr)
+	{
+		String result="";
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isPerfect(arr[i]))
 			{
 				result+=arr[i]+" ";
 			}
@@ -172,11 +249,64 @@ public class Methods {
 		System.out.println("odd numbers array");
 		displayArray(oddno);
 	}
-
+	public static int rotate(int n)
+	{
+		int base=1;
+		int no=digitCount(n);
+		for(int i=1;i<=no-1;i++)
+		{
+			base*=10;
+		}
+		
+		int rem=n/base;
+		return (n%base)*10+rem;
+	}
+	public static boolean isCircularPrime(int n)
+	{
+		int nCopy=n;
+		while(isPrime(n))
+		{
+			n=rotate(n);
+			if(nCopy==n)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public static String listOfCircularPrime(int[] arr)
+	{
+		String result="";
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isCircularPrime(arr[i]))
+			{
+				result+=arr[i]+" ";
+			}
+		}
+		return result;
+	}
+	
+	public static void display2DArray(int[][] arr)
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr.length;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
 	public static void main(String[] args) {
-		int[] array = { 2, 4, 6, 541, 145 };
-
-		System.out.println(listOfStrongNo(array));
+		int[] array = { 1193, 3779, 11939, 19937, 371, 407,2,145,6,28 };
+		int[][] twoDArray={{1,2,3},{4,5,6},{7,8,9}};
+		//System.out.println(listOfPrimeNo(array));
+		//System.out.println(listOfPerfectNo(array));
+		//System.out.println(listOfStrongNo(array));
+		//System.out.println(listOfArmstrong(array));
+		//System.out.println(listOfCircularPrime(array));
+		display2DArray(twoDArray);
 		
 	}
 
