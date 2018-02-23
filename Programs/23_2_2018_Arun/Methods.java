@@ -1,5 +1,4 @@
-package com.ts.arundaythree;
-
+package com.ts.adaythree;
 public class Methods {
 
 	public static void displayArray(int[] arr) {
@@ -28,10 +27,10 @@ public class Methods {
 		return count;
 	}
 	
-	public static int sumOfElements(int arr)
+	public static int sumOfElements(int[] arr)
 	{
 		int sum=0;
-		for(int i=0;i<are.length;i++)
+		for(int i=0;i<arr.length;i++)
 		{
        			sum+=arr[i];
 		}
@@ -56,10 +55,32 @@ public class Methods {
 		}
 		return count;
 	}
-	vjinka@amazon.com
+	
+	public static int factorialOfNumber(int n)
+	{
+		if(n==0 || n==1)
+			return 1;
+		int result=1;
+		for(int i=2;i<=n;i++)
+		{
+			result*=i;
+		}
+		return result;
+	}
+	
+	public static int sumFactorialOfDigits(int n)
+	{
+		int sum=0;
+		while(n!=0)
+		{
+			sum+=factorialOfNumber(n%10);
+			n/=10;
+		}
+		return sum;
+	}
 	public static boolean isStrong(int n)
 	{
-		
+		return n==sumFactorialOfDigits(n);
 	}
 	
 	public static int sumOfFactors(int n)
@@ -79,7 +100,18 @@ public class Methods {
 	 	return n==sumOfFactors(n);
 	}
 
-	
+	public static String listOfStrongNo(int[] arr)
+	{
+		 String result="";
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isStrong(arr[i]))
+			{
+				result+=arr[i]+" ";
+			}
+		}
+		return result;
+	}
 	public static int largestElement(int[] arr)
 	{
 		int largest=arr[0];
@@ -106,11 +138,11 @@ public class Methods {
 		return smallest;
 	}
 	
-	public static int secondLargest(int[] arr)
-	{
-		
-	}
-	
+//	public static int secondLargest(int[] arr)
+//	{
+//		
+//	}
+//	
 	
 	public static void splitEvenOdd(int[] arr) {
 
@@ -142,9 +174,9 @@ public class Methods {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 2, 4, 6, 8, 10, 12, 14, 3, 5 };
+		int[] array = { 2, 4, 6, 541, 145 };
 
-		System.out.println(smallestElement(array));
+		System.out.println(listOfStrongNo(array));
 		
 	}
 
