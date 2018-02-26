@@ -148,6 +148,7 @@ public class Methods {
 		{
 			for(int j=0;j<arr.length;j++)
 			{
+				temp[i][j]=arr[i][j];
 				arr[i][j]=-(arr[i][j]);
 			}
 		}
