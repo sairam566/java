@@ -1,13 +1,5 @@
-/**
- * 
- */
-package javatutorial;
 
-/**
- * @author tsuser
- *
- */
-public class CodingExsersce {
+public class NumbersReversePattern {
 
 	public static void main(String[] args) {
 		int count = 0, steps = 5;
