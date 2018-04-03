@@ -12,7 +12,7 @@ xmlns="http://www.springframework.org/schema/beans"
     3.Marks
     4.Address  -->
     <constructor-arg value="556" type="int"></constructor-arg>
-<constructor-arg value="durga"></constructor-arg>
+<constructor-arg value="d"></constructor-arg>
 <constructor-arg value="800" type="int"></constructor-arg>
 <constructor-arg>
 <ref bean="addressbean"/>
