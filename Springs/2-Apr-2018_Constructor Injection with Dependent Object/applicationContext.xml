@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+
+<bean id="studentbean" class="Student">
+<!--1.rollNO
+    2.Name
+    3.Marks
+    4.Address  -->
+    <constructor-arg value="556" type="int"></constructor-arg>
+<constructor-arg value="durga"></constructor-arg>
+<constructor-arg value="800" type="int"></constructor-arg>
+<constructor-arg>
+<ref bean="addressbean"/>
+</constructor-arg>
+</bean>
+
+<bean id="addressbean" class="Address">
+<constructor-arg value="Bangalore"></constructor-arg>
+<constructor-arg value="Karnataka"></constructor-arg>
+<constructor-arg value="India"></constructor-arg>
+</bean>
+</beans>
